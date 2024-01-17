@@ -8,22 +8,27 @@ import pickle
 # with open("model.dill", "rb") as f:
 #     model=dill.load(f)
 
-with open("weight.pkl", "rb") as f:
-    weight = pickle.load(f)
-with open("bias.pkl", "rb") as f:
-    bias=pickle.load(f)
+with open("geniusTransformerModel", "rb") as f:
+    genModel=pickle.load(f)
+with open("svm_model.sav", "rb") as f:
+    secModel = pickle.load(f)
+
 
 def generatePass(lyric):
+    # bracket and parenthesis removal
+    # turn to encodings representation
     return genModel.predict(lyric)
 
-def predictSec(uMonth):
-    return str((float(uMonth)*weight)+bias)
+def predictSec(passphrase):
+    # reduce password to chars and encode values
+    # see j notebook passwordSec
+    return secModel.predict(passphrase)
 
-@st.cache_data
-def load_data(file):
-    df = pd.read_csv(file)
-    df = df.fillna("None")
-    return df
+# @st.cache_data
+# def load_data(file):
+#     df = pd.read_csv(file)
+#     df = df.fillna("None")
+#     return df
 
 def main():
     # This sets the page title and a cute favicon
@@ -43,7 +48,7 @@ def main():
     # st.pyplot(fig)
 
     # input as model generation, ability to edit from user
-    lyricInput = st.text_input("Copy/paste or enter song lyrics here to generate a base passphrase.","Type Here")
+    lyricInput = st.text_input("Copy/paste or type song lyrics here to generate a passphrase that you'll then edit.","Type Here")
     basePWord=generatePass(lyricInput)
     fullPWord= st.text_input("Your passphrase from the lyrics is below. Add, remove, or edit the passphrase to make it your own: ", basePWord)
 
