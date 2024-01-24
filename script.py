@@ -11,7 +11,7 @@ import pickle
 with open("geniusTransformerModel", "rb") as f:
     genModel=pickle.load(f)
 with open("svm_model.sav", "rb") as f:
-    secModel = pickle.load(f)
+    secModel=pickle.load(f)
 
 
 def generatePass(lyric):
@@ -57,7 +57,7 @@ def main():
         <h2 style="color:white;text-align:center;"> The Abalone is young</h2>
         </div>
         """
-    if st.button("Generate security measurement of passphrase."):
+    if st.button("Generate security score of passphrase."):
         output = predictSec(fullPWord)
         st.success('The security score of your passphrase is {}'.format(str(output)))
 
