@@ -23,7 +23,7 @@ def loadSecTokenizer():
 
 @st.cache_resource
 def loadSecModel():
-    secModel=tensorflow.keras.models.load_model("./secModelv3.keras")
+    secModel=tensorflow.keras.models.load_model("./secModelv2-1.keras")
     return secModel
 
 @st.cache_resource
