@@ -53,9 +53,9 @@ def promptLLM(system_prompt):
 
 
 def loadData():
-    trigrams=pd.read_csv("./data/passSecData/3grams_english.csv",usecols=["ngram"])
-    qgrams=pd.read_csv("./data/passSecData/4grams_english.csv",usecols=["ngram"])
-    fivegrams=pd.read_csv("./data/passSecData/5grams_english.csv",usecols=["ngram"])
+    trigrams=pd.read_csv("./datasets/3grams_english.csv",usecols=["ngram"])
+    qgrams=pd.read_csv("./datasets/4grams_english.csv",usecols=["ngram"])
+    fivegrams=pd.read_csv("./datasets/5grams_english.csv",usecols=["ngram"])
     grams=pd.concat([trigrams,qgrams],axis=0)
     allgrams=pd.concat([grams,fivegrams],axis=0)
     return allgrams
