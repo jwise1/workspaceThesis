@@ -32,7 +32,7 @@ def loadTokenizer():
 
 @st.cache_resource
 def loadModel():
-    return AutoModelForSeq2SeqLM.from_pretrained("./myGenModel6/")
+    return AutoModelForSeq2SeqLM.from_pretrained("./model.safetensors")
     #genModel = AutoModelForSeq2SeqLM.from_pretrained("spiece.model")
 
 @st.cache_resource
