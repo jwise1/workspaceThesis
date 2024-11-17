@@ -3,6 +3,7 @@ pandas
 numpy
 transformers
 tensorflow
+torch
 keras
 langchain_community
 langchain_core
