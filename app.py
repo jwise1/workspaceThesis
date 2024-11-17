@@ -170,8 +170,8 @@ def main():
                     # random two lines
                     lyricInput2=line.replace(basePWord,"")
                     lyricInput2=lyricInput2.replace("  "," ")
-                    print(line)
-                    print(lyricInput2)
+                    #print(line)
+                    #print(lyricInput2)
                     #line=processText(lyricInput2)
                     basePWord=generatePass(lyricInput2)
                     start=time.time()
@@ -198,7 +198,7 @@ def main():
                     #             basePWord=generatePass(lyricInput3)                       
         else:
             line=processText(lyricInput)
-            print(line)
+            #print(line)
             basePWord=generatePass(line,temperature=temp)
             start=time.time()
             while(checkNGrams(basePWord.strip())!=True or len(set(basePWord.strip().split(" ")))<=3):
@@ -206,7 +206,7 @@ def main():
                 if time.time()-start > 2.5 or len(set(basePWord.strip().split(" ")))<=3:
                     #print(time.time()-start)
                     line=processText(lyricInput)
-                    print(line)
+                    #print(line)
                     basePWord=generatePass(line,temperature=temp)
         # capture surrounding characters
         # flag=True
