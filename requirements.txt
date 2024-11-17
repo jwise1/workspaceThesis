@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+transformers
+tensorflow
+keras
+pickle
+langchain_community
+langchain_core
+nltk
