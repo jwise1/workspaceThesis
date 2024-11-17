@@ -246,18 +246,19 @@ def main():
             output=output[0]
             regex = re.compile('[@_!#$%^&*()<>?/\|}{~:]')
             if round(output[0])==1:
-                st.success('The security score of your passphrase (0.01 out of 2) is low. Consider adding special characters and further editing your passphrase. You can add numbers and words meaningful to you to improve security and memorability.')
+                st.write('The security score of your passphrase (0.01 out of 2) is low. Consider adding special characters and further editing your passphrase. You can add numbers and words meaningful to you to improve security and memorability.')
             elif round(output[1])==1 and regex.search(fullPWord.replace("_",""))!=None:
-                st.success('The security score of your passphrase (1 out of 2) is medium. You can make your passphrase more secure by adding special characters and numbers, as well as adding personally relatable words.')
+                st.write('The security score of your passphrase (1 out of 2) is medium. You can make your passphrase more secure by adding special characters and numbers, as well as adding personally relatable words.')
             elif round(output[1])==1 and regex.search(fullPWord.replace("_",""))==None:
-                st.success('The security score of your passphrase (1 out of 2) is medium. Be sure to make your passphrase more secure by adding special characters and not making it too short.')
+                st.write('The security score of your passphrase (1 out of 2) is medium. Be sure to make your passphrase more secure by adding special characters and not making it too short.')
             elif round(output[2])==1 and regex.search(fullPWord.replace("_",""))!=None:
-                st.success('The security score of your passphrase (2 out of 2) is high. Your secure passphrase is ready for use!')
+                st.write('The security score of your passphrase (2 out of 2) is high. Your secure passphrase is ready for use!')
             elif round(output[2])==1 and regex.search(fullPWord.replace("_",""))==None:
-                st.success('The security score of your passphrase (2 out of 2) is high, but you should add more special characters and numbers to it to make it more unique.')
+                st.write('The security score of your passphrase (2 out of 2) is high, but you should add more special characters and numbers to it to make it more unique.')
             # needs implementation
         if st.button("Generate Story from Password"):
-            st.success(promptLLM("Generate a unique story from the following phrase using proper nouns from the phrase WITHOUT repeating the phrase in the story and WITHOUT including the same sequence of words in the story: "+fullPWord))
+            st.write("Temporarily Disabled")
+            #st.success(promptLLM("Generate a unique story from the following phrase using proper nouns from the phrase WITHOUT repeating the phrase in the story and WITHOUT including the same sequence of words in the story: "+fullPWord))
             
 
 
