@@ -49,7 +49,7 @@ def promptLLM(system_prompt):
         input_variables=["system_prompt"],
         template=template
     )
-    response = llm.invoke(prompt.format(system_prompt=system_prompt))
+    response = ollama.chat(prompt.format(system_prompt=system_prompt))
     return response
 
 
