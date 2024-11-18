@@ -1,12 +1,10 @@
 streamlit
-replicate
 pandas
 numpy
 transformers
 tensorflow
 torch
 keras
-ollama
 langchain_community
 langchain_core
 nltk
