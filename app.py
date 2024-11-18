@@ -38,7 +38,7 @@ def loadModel():
 @st.cache_resource
 def promptLLM(system_prompt):
     api_key=st.secrets["hf_llama3_token"]
-    llm = Ollama(model="llama3", api_key=api_key)
+    llm = Ollama(model="llama3")
     
     #llm = Llama3(api_key=api_key)
     template = """
