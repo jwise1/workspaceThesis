@@ -35,26 +35,26 @@ def loadModel():
     return AutoModelForSeq2SeqLM.from_pretrained("jwise1/mt5-lyricPassword", token="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")
     #genModel = AutoModelForSeq2SeqLM.from_pretrained("spiece.model")
 
-@st.cache_resource
-def promptLLM(system_prompt):
-    api_key=st.secrets["hf_llama3_token"]
-    os.environ['HF_TOKEN'] = api_key
+#@st.cache_resource
+#def promptLLM(system_prompt):
+    #api_key=st.secrets["hf_llama3_token"]
+    #os.environ['HF_TOKEN'] = api_key
     #llm = Ollama(model="llama3")
-    from transformers import AutoTokenizer, AutoModelForCausalLM
-    model = pipeline("text-generation", model="meta-llama/Llama-3.1-8B-Instruct")
+    #from transformers import AutoTokenizer, AutoModelForCausalLM
+    #model = pipeline("text-generation", model="meta-llama/Llama-3.1-8B-Instruct")
     #llm = Llama3(api_key=api_key)
-    template = """
-        <|begin_of_text|>
-        <|start_header_id|>system<|end_header_id|>
-        {system_prompt}
-        <|eot_id|>
-        """
-    prompt = PromptTemplate(
-        input_variables=["system_prompt"],
-        template=template
-    )
-    response=model(system_prompt)[0]
-    return response
+    #template = """
+        #<|begin_of_text|>
+        #<|start_header_id|>system<|end_header_id|>
+       # {system_prompt}
+       # <|eot_id|>
+       # """
+    #prompt = PromptTemplate(
+        #input_variables=["system_prompt"],
+        #template=template
+    #)
+    #response=model(system_prompt)[0]
+    #return response
 
 
 def loadData():
