@@ -52,7 +52,7 @@ def promptLLM(system_prompt):
         input_variables=["system_prompt"],
         template=template
     )
-    response=model(system_prompt)
+    response=model(system_prompt)[0]
     return response
 
 
