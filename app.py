@@ -122,8 +122,8 @@ def checkNGrams(text):
             continue
     return True
 
-def click_button():
-    st.session_state.clicked = True
+#def click_button():
+    #st.session_state.clicked = True
 
 def main():
     # This sets the page title and a cute favicon
@@ -134,7 +134,7 @@ def main():
 
     # input as model generation, ability to edit from user
     if 'bPW' not in st.session_state or 'bPW1' not in st.session_state:
-        st.session_state.clicked = False
+        #st.session_state.clicked = False
         st.session_state['bPW']="Type Here"
         st.session_state['bPW1']=" "
 
@@ -145,7 +145,7 @@ def main():
     temp=st.slider(label="Variations in Text Generated:",min_value=1,max_value=3,value=1)
     check1=st.checkbox(label="Include only words found in lyrics")
     
-    if st.button("Generate Password", on_click=click_button):
+    if st.button("Generate Password"):
 
         if check1==True:
                 if temp==1:
