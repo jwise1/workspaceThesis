@@ -39,6 +39,8 @@ def loadModel():
 @st.cache_resource
 def promptLLM(system_prompt):
     #llm = Ollama(model="llama3")
+    api_key=st.secret["token"]
+    llm = Llama3(api_key=api_key)
     template = """
         <|begin_of_text|>
         <|start_header_id|>system<|end_header_id|>
