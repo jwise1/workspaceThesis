@@ -41,7 +41,7 @@ def promptLLM(system_prompt):
     os.environ['HF_TOKEN'] = api_key
     #llm = Ollama(model="llama3")
     from transformers import AutoTokenizer, AutoModelForCausalLM
-    model = pipeline("text-generation", model="meta-llama/Llama-3.2-8B-Instruct")
+    model = pipeline("text-generation", model="meta-llama/Llama-3.1-8B-Instruct")
     #llm = Llama3(api_key=api_key)
     template = """
         <|begin_of_text|>
