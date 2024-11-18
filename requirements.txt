@@ -5,6 +5,7 @@ transformers
 tensorflow
 torch
 keras
+ollama
 langchain_community
 langchain_core
 nltk
