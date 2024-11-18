@@ -253,15 +253,15 @@ def main():
             if round(output[0])==1:
                 st.success('The security score of your passphrase (0 out of 4) is very weak. Estimated guesses to crack: less than 1,000 guesses. Consider adding special characters and further editing your passphrase. You can add numbers and words meaningful to you to improve security and memorability.')
             elif round(output[1])==1:
-                st.success('The security score of your passphrase (1 out of 4) is weak. Estimated guesses to crack: less than 1 million guesses. Be sure to make your passphrase more secure by adding special characters, numbers, personally relatable words, and not making it too short.')
+                st.success('The security score of your passphrase (1 out of 4) is weak. Estimated guesses to crack: greater than 1,000 guesses but less than 1 million guesses. Be sure to make your passphrase more secure by adding special characters, numbers, personally relatable words, and not making it too short.')
             elif round(output[2])==1:
-                st.success('The security score of your passphrase (2 out of 4) is medium. Estimated guesses to crack: less than 100 million guesses. Add more length with meaningful words, special characters or numbers.')
+                st.success('The security score of your passphrase (2 out of 4) is medium. Estimated guesses to crack: greater than 1 million guesses but less than 100 million guesses. Add more length with meaningful words, special characters or numbers.')
             elif round(output[3])==1:
-                st.success('The security score of your passphrase (3 out of 4) is strong. Estimated guesses to crack: less than 10 billion guesses. However, you should add more special characters and numbers to it to make it more unique.')
+                st.success('The security score of your passphrase (3 out of 4) is strong. Estimated guesses to crack: greater than 100 million guesses but less than 10 billion guesses. You can add more special characters and numbers to it to make it more unique.')
             elif round(output[4])==1 and regex.search(fullPWord.replace("_",""))!=None:
                 st.success('The security score of your passphrase (4 out of 4) is very strong. Estimated guesses to crack: greater than or equal to 10 billion guesses! Your secure passphrase is ready for use!')
             elif round(output[4])==1 and regex.search(fullPWord.replace("_",""))==None:
-                st.success('The security score of your passphrase (4 out of 4) is very strong. Estimated guesses to crack: greater than or equal to 10 billion guesses! However, you should add more special characters and numbers to it to make it more unique.')
+                st.success('The security score of your passphrase (4 out of 4) is very strong. Estimated guesses to crack: greater than or equal to 10 billion guesses! To make it even more secure you can add special characters for uniqueness.')
             # needs implementation
         #if st.button("Generate Story from Password"):
             #st.success("Temporarily Disabled")
