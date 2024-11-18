@@ -127,7 +127,7 @@ def checkNGrams(text):
 
 def main():
     # This sets the page title and a cute favicon
-    st.set_page_config(page_title='VerseVault: Using Song Lyrics To Generate Memorable Passwords And Analysis Of Their Security', page_icon="")
+    st.set_page_config(page_title='VerseVault: Using Song Lyrics To Generate Memorable Passwords And Analysis Of Their Security', page_icon="./VV3.jpg", layout="centered")
 
     st.title("***VerseVault***: Using Song Lyrics To Generate Memorable Passwords And Analysis Of Their Security")
     st.image("./VV3.jpg",caption="VerseVault uses machine learning to generate passwords from song lyrics and rank the security of them based on cyberattack prediction", width=650)
