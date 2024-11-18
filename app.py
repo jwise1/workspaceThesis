@@ -259,8 +259,8 @@ def main():
                 st.success('The security score of your passphrase (4 out of 4) is very strong. Estimated guesses to crack: greater than or equal to 10 billion guesses! However, you should add more special characters and numbers to it to make it more unique.')
             # needs implementation
         if st.button("Generate Story from Password"):
-            st.success("Temporarily Disabled")
-            #st.success(promptLLM("Generate a unique story from the following phrase using proper nouns from the phrase WITHOUT repeating the phrase in the story and WITHOUT including the same sequence of words in the story: "+fullPWord))
+            #st.success("Temporarily Disabled")
+            st.success(promptLLM("Generate a unique story from the following phrase using proper nouns from the phrase WITHOUT repeating the phrase in the story and WITHOUT including the same sequence of words in the story: "+fullPWord))
             
 
 
