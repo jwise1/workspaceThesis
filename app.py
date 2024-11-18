@@ -1,5 +1,5 @@
 import streamlit as st
-from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, AutoModelForCausalLM
 from tensorflow.keras.preprocessing.sequence import pad_sequences # type: ignore
 import pandas as pd
 import numpy as np
