@@ -3,3 +3,7 @@ primaryColor="#101e5a"
 backgroundColor="#474b4e"
 secondaryBackgroundColor="#33449e"
 textColor="#ffffff"
+
+[client]
+showErrorDetails = false
+toolbarMode = "viewer"
