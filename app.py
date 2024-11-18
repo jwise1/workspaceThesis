@@ -38,8 +38,9 @@ def loadModel():
 @st.cache_resource
 def promptLLM(system_prompt):
     api_key=st.secrets["hf_llama3_token"]
-    llm = Ollama(model="llama3")
-    
+    #llm = Ollama(model="llama3")
+    from transformers import AutoTokenizer, AutoModelForCausalLM
+    model = pipeline("text-generation", model="meta-llama/Llama-3.2-1B-Instruct")
     #llm = Llama3(api_key=api_key)
     template = """
         <|begin_of_text|>
@@ -51,7 +52,7 @@ def promptLLM(system_prompt):
         input_variables=["system_prompt"],
         template=template
     )
-    response=llm.invoke(prompt.format(system_prompt=system_prompt))
+    response=model(system_prompt)
     return response
 
 
