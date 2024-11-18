@@ -12,6 +12,7 @@ import random
 import string
 from nltk.util import ngrams
 import time
+import ollama
 from langchain_community.llms import Ollama
 from langchain_core.prompts import PromptTemplate
 
