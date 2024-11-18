@@ -129,7 +129,8 @@ def main():
     # This sets the page title and a cute favicon
     st.set_page_config(page_title='Using Song Lyrics To Generate Memorable Passwords And Analysis Of Their Security', page_icon="")
 
-    st.title("Using Song Lyrics To Generate Memorable Passwords And Analysis Of Their Security🧾")
+    st.title("Using Song Lyrics To Generate Memorable Passwords And Analysis Of Their Security")
+    st.image("./VV3.jpg",caption="Verse Vault uses machine learning to generate passwords from song lyrics and rank the security of them based on cyberattack prediction")
 
     # input as model generation, ability to edit from user
     if 'bPW' not in st.session_state or 'bPW1' not in st.session_state:
