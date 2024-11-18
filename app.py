@@ -40,8 +40,8 @@ def promptLLM(system_prompt):
     #llm = Ollama(model="llama3")
     model_name = "meta-llama/Llama-3.1-8B-Instruct" 
     api_key=st.secrets["token"]
-    tokenizer = AutoTokenizer.from_pretrained(model_name, use_auth_token=api_key) 
-    model = AutoModelForCausalLM.from_pretrained(model_name, use_auth_token=api_key)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, token=api_key) 
+    model = AutoModelForCausalLM.from_pretrained(model_name, token=api_key)
     
     #llm = Llama3(api_key=api_key)
     template = """
