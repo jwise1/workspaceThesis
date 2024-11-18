@@ -38,7 +38,7 @@ def loadModel():
 
 @st.cache_resource
 def promptLLM(system_prompt):
-    llm = Ollama(model="llama3")
+    #llm = Ollama(model="llama3")
     template = """
         <|begin_of_text|>
         <|start_header_id|>system<|end_header_id|>
