@@ -130,7 +130,7 @@ def main():
     st.set_page_config(page_title='VerseVault: Using Song Lyrics To Generate Memorable Passwords And Analysis Of Their Security', page_icon="")
 
     st.title("Using Song Lyrics To Generate Memorable Passwords And Analysis Of Their Security")
-    st.image("./VV3.jpg",caption="Verse Vault uses machine learning to generate passwords from song lyrics and rank the security of them based on cyberattack prediction", width=750)
+    st.image("./VV3.jpg",caption="Verse Vault uses machine learning to generate passwords from song lyrics and rank the security of them based on cyberattack prediction", width=650)
 
     # input as model generation, ability to edit from user
     if 'bPW' not in st.session_state or 'bPW1' not in st.session_state:
