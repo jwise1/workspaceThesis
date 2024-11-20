@@ -107,7 +107,7 @@ def processText(lyrics):
             n=random.randint(0,count-16)
             lyrics=" ".join(lyrics.split(" ")[n:n+16])
         except:
-            if len(re.findall(r'\w+',lyrics))>15:
+            if count>15:
                 lyrics=lyrics
             else:
                 st.success("You must enter a longer lyric.")
