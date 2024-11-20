@@ -111,6 +111,7 @@ def processText(lyrics):
                 lyrics=lyrics
             else:
                 st.success("You must enter a longer lyric.")
+                return False
     return lyrics
 
 def checkNGrams(text):
@@ -151,6 +152,8 @@ def main():
                 if temp==1:
                     # random two lines
                     line=processText(lyricInput)
+                    if line==False:
+                        break
                     basePWord=generatePass(line)
                     start=time.time()
                     # check if contained in lyric/check n-grams
@@ -164,6 +167,8 @@ def main():
                 if temp>=2:
                     # random two lines
                     line=processText(lyricInput)
+                    if line==False:
+                        break
                     basePWord=generatePass(line)
                     start=time.time()
                     # check if contained in lyric/check n-grams
@@ -204,6 +209,8 @@ def main():
                     #             basePWord=generatePass(lyricInput3)                       
         else:
             line=processText(lyricInput)
+            if line==False:
+                break
             #print(line)
             basePWord=generatePass(line,temperature=temp)
             start=time.time()
