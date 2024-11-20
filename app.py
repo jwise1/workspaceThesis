@@ -122,6 +122,11 @@ def checkNGrams(text):
         else:
             continue
     return True
+    
+def rerun():
+    st.success("Restarting webpage.")
+    time.sleep(2)
+    st.rerun()
 
 #def click_button():
     #st.session_state.clicked = True
@@ -153,7 +158,7 @@ def main():
                     # random two lines
                     line=processText(lyricInput)
                     if line==False:
-                        st.rerun()
+                        rerun()
                     basePWord=generatePass(line)
                     start=time.time()
                     # check if contained in lyric/check n-grams
@@ -168,7 +173,7 @@ def main():
                     # random two lines
                     line=processText(lyricInput)
                     if line==False:
-                        st.rerun()
+                        rerun()
                     basePWord=generatePass(line)
                     start=time.time()
                     # check if contained in lyric/check n-grams
@@ -210,7 +215,7 @@ def main():
         else:
             line=processText(lyricInput)
             if line==False:
-                st.rerun()
+                rerun()
             #print(line)
             basePWord=generatePass(line,temperature=temp)
             start=time.time()
