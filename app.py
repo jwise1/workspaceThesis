@@ -153,7 +153,7 @@ def main():
                     # random two lines
                     line=processText(lyricInput)
                     if line==False:
-                        break
+                        main()
                     basePWord=generatePass(line)
                     start=time.time()
                     # check if contained in lyric/check n-grams
@@ -168,7 +168,7 @@ def main():
                     # random two lines
                     line=processText(lyricInput)
                     if line==False:
-                        break
+                        main()
                     basePWord=generatePass(line)
                     start=time.time()
                     # check if contained in lyric/check n-grams
@@ -210,7 +210,7 @@ def main():
         else:
             line=processText(lyricInput)
             if line==False:
-                break
+                main()
             #print(line)
             basePWord=generatePass(line,temperature=temp)
             start=time.time()
