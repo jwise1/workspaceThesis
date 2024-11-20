@@ -32,7 +32,7 @@ def loadTokenizer():
 
 @st.cache_resource
 def loadModel():
-    return AutoModelForSeq2SeqLM.from_pretrained("jwise1/mt5-lyricPassword", token="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")
+    return AutoModelForSeq2SeqLM.from_pretrained("jwise1/mt5-lyricPassword", token=st.secrets['hf_mt5'])
     #genModel = AutoModelForSeq2SeqLM.from_pretrained("spiece.model")
 
 #@st.cache_resource
