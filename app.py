@@ -255,9 +255,10 @@ def main():
         #             break
         #     except:
         #         break
-        basePWord=str(basePWord.title())
-        basePWord=str(basePWord.replace(" ","_"))
-        st.session_state['bPW1']=basePWord
+        if not line==False:
+            basePWord=str(basePWord.title())
+            basePWord=str(basePWord.replace(" ","_"))
+            st.session_state['bPW1']=basePWord
         st.rerun()
     if st.session_state.bPW:
         fullPWord= st.text_input("Your base passphrase from the lyrics is below. Using the song lyrics generated alone is not recommended. Add complexity by substituting letters with characters, adding numbers, inserting special characters, and using proper nouns either randomly or relatable to you to make it more memorable and secure: ",st.session_state['bPW1'])
