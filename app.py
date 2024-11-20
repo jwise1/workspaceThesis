@@ -104,7 +104,7 @@ def processText(lyrics):
     else:
         if count>20:
                 n=random.randint(0,count-16)
-                lyrics=" ".join(lyrics.split(" ")[n:n+16])
+                lyrics=" ".join(lyrics.split(" ")[n:n+15])
         else:
             st.success("You must enter a longer lyric.")
             return False
