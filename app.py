@@ -93,7 +93,8 @@ def predictSec(passphrase):
     return secModel.predict(passphrase1)
 
 def processText(lyrics):
-    if "\n" in lyrics:
+    count=len(re.findall(r'\w+', lyrics))
+    if "\n" in lyrics and count>15:
         lyrics = re.sub("[\(\[].*?[\)\]]", "", lyrics)
         lyrics=lyrics.translate(str.maketrans('', '', string.punctuation)).lower()
         l=lyrics.split('\n')
@@ -101,11 +102,11 @@ def processText(lyrics):
         n=random.randint(0,len(arr)-1)
         lyrics=" ".join(arr[n:n+2])
     else:
-        count=len(re.findall(r'\w+', lyrics))
+        
         try:
-            f=(count/12)>0
-            n=random.randint(0,count-16)
-            lyrics=" ".join(lyrics.split(" ")[n:n+16])
+            if count>15:
+                n=random.randint(0,count-16)
+                lyrics=" ".join(lyrics.split(" ")[n:n+16])
         except:
             if count>15:
                 lyrics=lyrics
