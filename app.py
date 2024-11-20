@@ -159,42 +159,44 @@ def main():
                     line=processText(lyricInput)
                     if line==False:
                         rerun()
-                    basePWord=generatePass(line)
-                    start=time.time()
-                    # check if contained in lyric/check n-grams
-                    while(basePWord.strip() not in line.strip() or checkNGrams(basePWord.strip())!=True or len(set(basePWord.strip().split(" ")))<=3):
+                    else:
                         basePWord=generatePass(line)
-                        if time.time()-start > 1.5 or len(set(basePWord.strip().split(" ")))<=3:
-                            #print(time.time()-start)
-                            line=processText(lyricInput)
+                        start=time.time()
+                        # check if contained in lyric/check n-grams
+                        while(basePWord.strip() not in line.strip() or checkNGrams(basePWord.strip())!=True or len(set(basePWord.strip().split(" ")))<=3):
                             basePWord=generatePass(line)
+                            if time.time()-start > 1.5 or len(set(basePWord.strip().split(" ")))<=3:
+                                #print(time.time()-start)
+                                line=processText(lyricInput)
+                                basePWord=generatePass(line)
                 # TEMP 2 and 3 NEED WORK
                 if temp>=2:
                     # random two lines
                     line=processText(lyricInput)
                     if line==False:
                         rerun()
-                    basePWord=generatePass(line)
-                    start=time.time()
-                    # check if contained in lyric/check n-grams
-                    while(basePWord.strip() not in line.strip()):
+                    else:
                         basePWord=generatePass(line)
-                        if time.time()-start > 2.5 or len(set(basePWord.strip().split(" ")))<=3:
-                            #print(time.time()-start)
-                            line=processText(lyricInput)
+                        start=time.time()
+                        # check if contained in lyric/check n-grams
+                        while(basePWord.strip() not in line.strip()):
                             basePWord=generatePass(line)
-                    # random two lines
-                    lyricInput2=line.replace(basePWord,"")
-                    lyricInput2=lyricInput2.replace("  "," ")
-                    #print(line)
-                    #print(lyricInput2)
-                    #line=processText(lyricInput2)
-                    basePWord=generatePass(lyricInput2)
-                    start=time.time()
-
-                    # check if contained in lyric/check n-grams
-                    while(checkNGrams(basePWord.strip())!=True):
+                            if time.time()-start > 2.5 or len(set(basePWord.strip().split(" ")))<=3:
+                                #print(time.time()-start)
+                                line=processText(lyricInput)
+                                basePWord=generatePass(line)
+                        # random two lines
+                        lyricInput2=line.replace(basePWord,"")
+                        lyricInput2=lyricInput2.replace("  "," ")
+                        #print(line)
+                        #print(lyricInput2)
+                        #line=processText(lyricInput2)
                         basePWord=generatePass(lyricInput2)
+                        start=time.time()
+    
+                        # check if contained in lyric/check n-grams
+                        while(checkNGrams(basePWord.strip())!=True):
+                            basePWord=generatePass(lyricInput2)
                         #if time.time()-start > 2.5 or len(set(basePWord.strip().split(" ")))<=3: 
                             #print(time.time()-start)
                             #line=processText(lyricInput2)
@@ -217,15 +219,16 @@ def main():
             if line==False:
                 rerun()
             #print(line)
-            basePWord=generatePass(line,temperature=temp)
-            start=time.time()
-            while(checkNGrams(basePWord.strip())!=True or len(set(basePWord.strip().split(" ")))<=3):
+            else:
                 basePWord=generatePass(line,temperature=temp)
-                if time.time()-start > 2.5 or len(set(basePWord.strip().split(" ")))<=3:
-                    #print(time.time()-start)
-                    line=processText(lyricInput)
-                    #print(line)
+                start=time.time()
+                while(checkNGrams(basePWord.strip())!=True or len(set(basePWord.strip().split(" ")))<=3):
                     basePWord=generatePass(line,temperature=temp)
+                    if time.time()-start > 2.5 or len(set(basePWord.strip().split(" ")))<=3:
+                        #print(time.time()-start)
+                        line=processText(lyricInput)
+                        #print(line)
+                        basePWord=generatePass(line,temperature=temp)
         # capture surrounding characters
         # flag=True
         # while(flag):
