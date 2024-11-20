@@ -102,17 +102,12 @@ def processText(lyrics):
         n=random.randint(0,len(arr)-1)
         lyrics=" ".join(arr[n:n+2])
     else:
-        
-        try:
-            if count>15:
+        if count>15:
                 n=random.randint(0,count-16)
                 lyrics=" ".join(lyrics.split(" ")[n:n+16])
-        except:
-            if count>15:
-                lyrics=lyrics
-            else:
-                st.success("You must enter a longer lyric.")
-                return False
+        else:
+            st.success("You must enter a longer lyric.")
+            return False
     return lyrics
 
 def checkNGrams(text):
