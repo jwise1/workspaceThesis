@@ -28,7 +28,7 @@ def loadSecModel():
 
 @st.cache_resource
 def loadTokenizer():
-    return AutoTokenizer.from_pretrained("miscjose/mt5-small-finetuned-genius-music")
+    return AutoTokenizer.from_pretrained("./tokenizer.json")
 
 @st.cache_resource
 def loadModel():
