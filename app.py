@@ -28,7 +28,7 @@ def loadSecModel():
 
 @st.cache_resource
 def loadTokenizer():
-    return AutoTokenizer.from_pretrained("./tokenizer.json")
+    return AutoTokenizer.from_pretrained("./tokenizer")
 
 @st.cache_resource
 def loadModel():
