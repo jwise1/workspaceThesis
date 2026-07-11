@@ -4,6 +4,7 @@ numpy
 transformers
 tensorflow
 torch
+torchvision
 keras
 langchain_community
 langchain_core
